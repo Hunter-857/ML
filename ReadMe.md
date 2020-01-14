@@ -1,5 +1,8 @@
-# Env
- 
-     numpy>=1.13.3
-     pip install --user -U scipy scikit-learn pandas -i https://pypi.tuna.tsinghua.edu.cn/simple
-     pip install --user numpy==1.13.3 -i https://pypi.tuna.tsinghua.edu.cn/simple
+# 学习笔记
+  
+  记录学习相互分享
+  
+
+# 环境
+   pip install numpy panda scipy scikit-learn Matplotlib
+   pip 速度慢通过设置国内的源 -i https://pypi.tuna.tsinghua.edu.cn/simple
