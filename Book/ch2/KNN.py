@@ -2,19 +2,23 @@ import numpy as np
 import operator
 import matplotlib.pyplot as plt
 
-
 '''
 prepare data
 '''
+
+
 def create_set():
     group = np.array([
-                [1.0, 1.1], [1.0, 1.0], [0, 0], [0, 0.1]])
+        [1.0, 1.1], [1.0, 1.0], [0, 0], [0, 0.1]])
     labels = ['A', 'A', 'B', 'B']
     return group, labels
+
 
 '''
     show to point
 '''
+
+
 def pic(x_aix, y_aix):
     plt.scatter(x_aix, y_aix, c='b')
     plt.xlabel(xlabel="x")
@@ -29,6 +33,8 @@ def pic(x_aix, y_aix):
  labels
  k use for select neighbor
 '''
+
+
 def classify(in_x, data_set, labels, k):
     data_set_size = data_set.shape[0]
     diff_mat = np.tile(in_x, (data_set_size, 1)) - data_set
@@ -52,7 +58,7 @@ def auto_norm(dataSet):
     norm_data_set = np.zeros(np.shape(dataSet))
     m = dataSet.shape[0]
     norm_data_set = dataSet - np.tile(min_val, (m, 1))
-    norm_data_set = norm_data_set/np.tile(ranges, (m, 1))   #element wise divide
+    norm_data_set = norm_data_set / np.tile(ranges, (m, 1))  # element wise divide
     return norm_data_set, ranges, min_val
 
 
@@ -72,19 +78,20 @@ def file_to_matrix(file_name):
     return return_mat, class_label_vector
 
 
-def datingClassTest():
-    hoRatio = 0.10
-    datingDataMat, datingLabels = file_to_matrix("datingTestSet2.txt")
-    normMat, ranges, minVals = auto_norm(datingDataMat)
-    m = normMat.shape[0]
-    numTestVecs = int(m * hoRatio)
-    errorCount = 0
-    for i in range(numTestVecs):
-        classify_result = classify(normMat[i, :], normMat[numTestVecs:m, :], datingLabels[numTestVecs: m], 3)
-        print("the classify came back with %d , the real answer is %d", (classify_result, datingLabels[i]))
-        if classify_result != datingLabels[i]:
-            errorCount += 1.0
-    print("the total error rate is: %f %", (float(errorCount)/float(numTestVecs)))
+def dating_class_test():
+    ho_ratio = 0.10
+    dating_data_mat, dating_labels = file_to_matrix("datingTestSet2.txt")
+    norm_mat, ranges, min_val = auto_norm(dating_data_mat)
+    m = norm_mat.shape[0]
+    num_test_vecs = int(m * ho_ratio)
+    error_count = 0
+    for i in range(num_test_vecs):
+        classify_result = classify(norm_mat[i, :], norm_mat[num_test_vecs:m, :], dating_labels[num_test_vecs: m], 3)
+        print("the classify came back with %d , the real answer is %d", (classify_result, dating_labels[i]))
+        if classify_result != dating_labels[i]:
+            error_count += 1.0
+    print("the total error rate is: %f %", (float(error_count) / float(num_test_vecs)))
+
 
 def classify_person():
     result = ["not at all", "in small does", "in large does"]
@@ -98,4 +105,4 @@ def classify_person():
 
 
 if __name__ == '__main__':
-    datingClassTest()
+    dating_class_test()
