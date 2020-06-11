@@ -87,7 +87,7 @@ def dating_class_test():
     error_count = 0
     for i in range(num_test_vecs):
         classify_result = classify(norm_mat[i, :], norm_mat[num_test_vecs:m, :], dating_labels[num_test_vecs: m], 3)
-        print("the classify came back with %d , the real answer is %d", (classify_result, dating_labels[i]))
+        print("the classify came back with %f , the real answer is %f ", classify_result, dating_labels[i])
         if classify_result != dating_labels[i]:
             error_count += 1.0
     print("the total error rate is: %f %", (float(error_count) / float(num_test_vecs)))
@@ -101,8 +101,8 @@ def classify_person():
     dating_data_mat, dating_labels = file_to_matrix("datingTestSet2.txt")
     norm_mat, ranges, min_val = auto_norm(dating_data_mat)
     in_arr = np.array([miles, games, ice_cream])
-    classif_result = classify(in_arr, norm_mat, dating_labels, k)
-
+    classif_result = classify(in_arr, norm_mat, dating_labels, k=3)
+    print(classif_result)
 
 if __name__ == '__main__':
-    dating_class_test()
+    classify_person()

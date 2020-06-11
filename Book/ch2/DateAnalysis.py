@@ -6,7 +6,6 @@ import Book.ch2.KNN as KNN
 def draw(dating_dat_mat, label):
     fig = plt.figure()
     ax = fig.add_subplot()
-    # ax.scatter(dating_dat_mat[:, 1], dating_dat_mat[:, 2])
     ax.scatter(dating_dat_mat[:, 1], dating_dat_mat[:, 2],
                15.0 * np.array(label), 15.0 * np.array(label))
     plt.show()
