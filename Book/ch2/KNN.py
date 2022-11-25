@@ -17,8 +17,6 @@ def create_set():
 '''
     show to point
 '''
-
-
 def pic(x_aix, y_aix):
     plt.scatter(x_aix, y_aix, c='b')
     plt.xlabel(xlabel="x")
@@ -33,8 +31,6 @@ def pic(x_aix, y_aix):
  labels
  k use for select neighbor
 '''
-
-
 def classify(in_x, data_set, labels, k):
     data_set_size = data_set.shape[0]
     diff_mat = np.tile(in_x, (data_set_size, 1)) - data_set
