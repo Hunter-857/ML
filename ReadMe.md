@@ -10,7 +10,9 @@
   配置环境变量
   
   D:\workspeace\anaconda
+  
   D:\workspeace\anaconda\Scripts
+  
   D:\workspeace\anaconda\Library\bin
   
   遇到了一个报错：
@@ -27,7 +29,6 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple  -r require.txt
 ## 目录
 
 [01 - lineRegression](01lineRegression/01_01_lineRegression.ipynb)
-
-
-
+[02 - DecsionTree](01lineRegression/01_01_lineRegression.ipynb)
+[03 - NN](01lineRegression/01_01_lineRegression.ipynb)
 
