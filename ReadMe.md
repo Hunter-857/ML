@@ -28,6 +28,8 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple  -r require.txt
 
 ## 目录
 
+[00 - pytorch](01lineRegression/01_01_lineRegression.ipynb)
+
 [01 - lineRegression](01lineRegression/01_01_lineRegression.ipynb)
 [02 - DecsionTree](01lineRegression/01_01_lineRegression.ipynb)
 [03 - NN](01lineRegression/01_01_lineRegression.ipynb)
